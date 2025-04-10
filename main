@@ -1,0 +1,19 @@
+from src.pdf_extractor import extract_text_from_pdf
+
+if __name__ == "__main__":
+    pdf_path = "data/10_02_2025 17_35_BO 32-24 Auditoria de instalaciones Marzo_Abril 2024.pdf"
+    
+    if os.path.exists(pdf_path):
+        print("=== Extracción básica ===")
+        extracted_text = extract_text_from_pdf(pdf_path)
+        print(extracted_text)
+        
+        """
+        print("\n=== Extracción con modelo de visión ===")
+        try:
+            vision_text = extract_text_with_vision_model(pdf_path)
+            print(vision_text)
+        except Exception as e:
+            print(f"Error en la extracción con visión: {e}")
+    else:
+        print(f"El archivo {pdf_path} no existe")"""

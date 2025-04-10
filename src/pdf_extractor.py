@@ -1,6 +1,7 @@
 from PyPDF2 import PdfReader
 from utils import pdf_bytes_to_images, VisionModel
 import io
+import os
 
 def extract_text_from_pdf(pdf_path):
     #Abir PDF
@@ -19,20 +20,11 @@ def extract_text_from_pdf(pdf_path):
     return full_text
 
 
-if __name__ == "__main__":
-    import os
-    
-    pdf_path = "data/pdf.pdf"
-    
-    if os.path.exists(pdf_path):
-        extracted_text = extract_text_from_pdf(pdf_path)
-        
-    print(extracted_text)
         
 
 def extract_text_with_vision_model(pdf_path):
     # Inicializar el modelo de visióncls
-    
+
     vision_model = VisionModel()
     
     # Leer el archivo PDF como bytes
@@ -58,7 +50,7 @@ def extract_text_with_vision_model(pdf_path):
     return markdown_content
 
 if __name__ == "__main__":
-    pdf_path = "data/pdf.pdf"
+    pdf_path = "data/10_02_2025 17_35_BO 32-24 Auditoria de instalaciones Marzo_Abril 2024.pdf"
     
     if os.path.exists(pdf_path):
         print("=== Extracción básica ===")
